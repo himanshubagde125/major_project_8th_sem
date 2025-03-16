@@ -1,0 +1,1255 @@
+[
+    {
+        "Subject": "Operating System",
+        "Type": "P",
+        "Professor": "Bibas Ghoshal",
+        "Groups": [
+            "301",
+            "302",
+            "303",
+            "304",
+            "305",
+            "306",
+            "307",
+            "308",
+            "309",
+            "309a"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 2
+    },
+    {
+        "Subject": "Cloud Computing",
+        "Type": "P",
+        "Professor": "Bibas Ghoshal",
+        "Groups": [
+            "301",
+            "302",
+            "303",
+            "304",
+            "305",
+            "306",
+            "307",
+            "308",
+            "309",
+            "309a",
+            "2s1",
+            "2s2"
+        ],
+        "Classroom": [
+            "Kolarac"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "Kolarac",
+        "Assignedtime": 16
+    },
+    {
+        "Subject": "Computer Vision",
+        "Type": "P",
+        "Professor": "Sonali Agrawal",
+        "Groups": [
+            "301",
+            "302",
+            "306",
+            "308"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 18
+    },
+    {
+        "Subject": "Cloud Computing",
+        "Type": "V",
+        "Professor": "O.P. Vyas",
+        "Groups": [
+            "301",
+            "303",
+            "304",
+            "305"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 39
+    },
+    {
+        "Subject": "Introduction To Programming",
+        "Type": "P",
+        "Professor": "Triloki Pant",
+        "Groups": [
+            "301",
+            "303",
+            "304",
+            "307",
+            "308",
+            "309",
+            "314",
+            "319",
+            "322"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 6
+    },
+    {
+        "Subject": "Introduction To Programming",
+        "Type": "V",
+        "Professor": "Majumdar",
+        "Groups": [
+            "301",
+            "303",
+            "304",
+            "307",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 8
+    },
+    {
+        "Subject": "Operating System",
+        "Type": "V",
+        "Professor": "K.M. Pooja",
+        "Groups": [
+            "301",
+            "305",
+            "308"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 28
+    },
+    {
+        "Subject": "Artificial Intelligence",
+        "Type": "P",
+        "Professor": "U.S Tiwari",
+        "Groups": [
+            "301",
+            "307",
+            "309a"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 31
+    },
+    {
+        "Subject": "Artificial Intelligence",
+        "Type": "V",
+        "Professor": "Anshu Anand",
+        "Groups": [
+            "301",
+            "307",
+            "309a"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 52
+    },
+    {
+        "Subject": "Computer Vision",
+        "Type": "V",
+        "Professor": "Navjot",
+        "Groups": [
+            "301",
+            "308",
+            "302",
+            "306"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 26
+    },
+    {
+        "Subject": "Object Oriented Programming",
+        "Type": "V",
+        "Professor": "Satish Kumar",
+        "Groups": [
+            "302",
+            "303"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 44
+    },
+    {
+        "Subject": "Operating System",
+        "Type": "V",
+        "Professor": "K.M. Pooja",
+        "Groups": [
+            "302",
+            "303",
+            "304"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 12
+    },
+    {
+        "Subject": "Object Oriented Programming",
+        "Type": "P",
+        "Professor": "Vrijendra Singh",
+        "Groups": [
+            "302",
+            "303",
+            "305",
+            "306",
+            "309",
+            "309a"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 0
+    },
+    {
+        "Subject": "Information Retrieval",
+        "Type": "P",
+        "Professor": "U.S Tiwari",
+        "Groups": [
+            "302",
+            "304",
+            "309"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 24
+    },
+    {
+        "Subject": "Information Retrieval",
+        "Type": "V",
+        "Professor": "Anupam Aggrawal",
+        "Groups": [
+            "302",
+            "304",
+            "309"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 51
+    },
+    {
+        "Subject": "Cloud Computing",
+        "Type": "V",
+        "Professor": "O.P. Vyas",
+        "Groups": [
+            "302",
+            "307",
+            "306"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 28
+    },
+    {
+        "Subject": "Software Engineering",
+        "Type": "P",
+        "Professor": "Shekar Verma",
+        "Groups": [
+            "303",
+            "304",
+            "305",
+            "306",
+            "307",
+            "308",
+            "313",
+            "314"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 14
+    },
+    {
+        "Subject": "Software Engineering",
+        "Type": "V",
+        "Professor": "Gaurav Srivastav",
+        "Groups": [
+            "303",
+            "304",
+            "305",
+            "306",
+            "307",
+            "308",
+            "313",
+            "314"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 41
+    },
+    {
+        "Subject": "Data Structures",
+        "Type": "P",
+        "Professor": "G C Nandi",
+        "Groups": [
+            "305",
+            "319",
+            "323",
+            "309a",
+            "324"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 12
+    },
+    {
+        "Subject": "Operating System",
+        "Type": "V",
+        "Professor": "K.M. Pooja",
+        "Groups": [
+            "306",
+            "307",
+            "309",
+            "309a"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 43
+    },
+    {
+        "Subject": "Cloud Computing",
+        "Type": "V",
+        "Professor": "O.P. Vyas",
+        "Groups": [
+            "308",
+            "309",
+            "309a"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 48
+    },
+    {
+        "Subject": "Introduction To Programming",
+        "Type": "V",
+        "Professor": "Majumdar",
+        "Groups": [
+            "308",
+            "309",
+            "314",
+            "319"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 45
+    },
+    {
+        "Subject": "Object Oriented Programming",
+        "Type": "V",
+        "Professor": "Satish Kumar",
+        "Groups": [
+            "309",
+            "309a",
+            "305",
+            "306"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 4
+    },
+    {
+        "Subject": "Data Structures",
+        "Type": "V",
+        "Professor": "G C Nandi",
+        "Groups": [
+            "309a",
+            "324",
+            "305"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 50
+    },
+    {
+        "Subject": "Computer Networks",
+        "Type": "P",
+        "Professor": "Maity",
+        "Groups": [
+            "313",
+            "314",
+            "319",
+            "323",
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 16
+    },
+    {
+        "Subject": "Computer Networks",
+        "Type": "V",
+        "Professor": "Pritish Varadwaj",
+        "Groups": [
+            "313",
+            "314",
+            "319",
+            "323",
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 52
+    },
+    {
+        "Subject": "Kompresija podataka",
+        "Type": "P",
+        "Professor": "Amaresh K Sahoo",
+        "Groups": [
+            "313",
+            "314",
+            "319",
+            "323",
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 3
+    },
+    {
+        "Subject": "Kompresija podataka",
+        "Type": "V",
+        "Professor": "Amaresh K Sahoo",
+        "Groups": [
+            "313",
+            "314",
+            "319",
+            "323",
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 54
+    },
+    {
+        "Subject": "Data Mining",
+        "Type": "P",
+        "Professor": "Randheer Baaghi",
+        "Groups": [
+            "313",
+            "314",
+            "319",
+            "323",
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 33
+    },
+    {
+        "Subject": "Data Mining",
+        "Type": "V",
+        "Professor": "Nidhi Mishra",
+        "Groups": [
+            "313",
+            "314",
+            "319",
+            "323",
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 43
+    },
+    {
+        "Subject": "Coa",
+        "Type": "P",
+        "Professor": "Venkat",
+        "Groups": [
+            "313",
+            "323"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 45
+    },
+    {
+        "Subject": "Coa",
+        "Type": "V",
+        "Professor": "Nidhi Mishra",
+        "Groups": [
+            "313",
+            "323"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 56
+    },
+    {
+        "Subject": "Data Structures",
+        "Type": "V",
+        "Professor": "G C Nandi",
+        "Groups": [
+            "319",
+            "323"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 14
+    },
+    {
+        "Subject": "Data centar infrastruktura",
+        "Type": "P",
+        "Professor": "Shivram Dubey",
+        "Groups": [
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 18
+    },
+    {
+        "Subject": "Data centar infrastruktura",
+        "Type": "V",
+        "Professor": "Shivram Dubey",
+        "Groups": [
+            "324",
+            "322"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 31
+    },
+    {
+        "Subject": "Design Analysis Algorithm",
+        "Type": "P",
+        "Professor": "K. P Singh",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 19
+    },
+    {
+        "Subject": "Design Analysis Algorithm",
+        "Type": "V",
+        "Professor": "K. P Singh",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "Atelje"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "Atelje",
+        "Assignedtime": 36
+    },
+    {
+        "Subject": "DBMS",
+        "Type": "P",
+        "Professor": "Ranjana Vyas",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "Studio"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "Studio",
+        "Assignedtime": 12
+    },
+    {
+        "Subject": "DBMS",
+        "Type": "V",
+        "Professor": "Ranjana Vyas",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "Studio"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "Studio",
+        "Assignedtime": 48
+    },
+    {
+        "Subject": "PPL",
+        "Type": "P",
+        "Professor": "Anajli Gautam",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 16
+    },
+    {
+        "Subject": "PPL",
+        "Type": "V",
+        "Professor": "Anajli Gautam",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 54
+    },
+    {
+        "Subject": "Scenario i knjiga snimanja",
+        "Type": "P",
+        "Professor": "Manish Kumar",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "Atelje"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "Atelje",
+        "Assignedtime": 6
+    },
+    {
+        "Subject": "Scenario i knjiga snimanja",
+        "Type": "V",
+        "Professor": "Manish Kumar",
+        "Groups": [
+            "3d1"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 24
+    },
+    {
+        "Subject": "Upravljanje i odrzavanje Windows Server okruzenja",
+        "Type": "P",
+        "Professor": "Naveen Saini",
+        "Groups": [
+            "3s1"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 15
+    },
+    {
+        "Subject": "Upravljanje i odrzavanje Windows Server okruzenja",
+        "Type": "P",
+        "Professor": "Naveen Saini",
+        "Groups": [
+            "3s1"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 51
+    },
+    {
+        "Subject": "Implementiranje Microsoft ISA servera",
+        "Type": "P",
+        "Professor": "Naveen Saini",
+        "Groups": [
+            "3s1"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 48
+    },
+    {
+        "Subject": "Implementiranje Microsoft ISA servera",
+        "Type": "P",
+        "Professor": "Naveen Saini",
+        "Groups": [
+            "3s1"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 3
+    },
+    {
+        "Subject": "Prakticne tehnike zastite u IP mrezama",
+        "Type": "P",
+        "Professor": "Pritish Varadwaj",
+        "Groups": [
+            "3s1"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 0
+    },
+    {
+        "Subject": "Prakticne tehnike zastite u IP mrezama",
+        "Type": "V",
+        "Professor": "Abdulla",
+        "Groups": [
+            "3s1"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 32
+    },
+    {
+        "Subject": "Probability & Statistics",
+        "Type": "P",
+        "Professor": "Seema",
+        "Groups": [
+            "3s1",
+            "3s2"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "2",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 36
+    },
+    {
+        "Subject": "Linear Algebra",
+        "Type": "P",
+        "Professor": "Savitri",
+        "Groups": [
+            "3s2"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 24
+    },
+    {
+        "Subject": "Linear Algebra",
+        "Type": "V",
+        "Professor": "Savitri",
+        "Groups": [
+            "3s2"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 27
+    },
+    {
+        "Subject": "GVC",
+        "Type": "P",
+        "Professor": "Anupam Aggrawal",
+        "Groups": [
+            "3s2"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 48
+    },
+    {
+        "Subject": "GVC",
+        "Type": "P",
+        "Professor": "Anupam Aggrawal",
+        "Groups": [
+            "3s2"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U4",
+        "Assignedtime": 38
+    },
+    {
+        "Subject": "Quantum Computing",
+        "Type": "P",
+        "Professor": "Srijit",
+        "Groups": [
+            "3s2"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 0
+    },
+    {
+        "Subject": "Quantum Computing",
+        "Type": "P",
+        "Professor": "Srijit",
+        "Groups": [
+            "3s2"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 15
+    },
+    {
+        "Subject": "Principles Of Economics",
+        "Type": "V",
+        "Professor": "Vineet Tiwari",
+        "Groups": [
+            "401"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 36
+    },
+    {
+        "Subject": "Priciples of Communication Engineering",
+        "Type": "V",
+        "Professor": "Ramesh K Bhukya",
+        "Groups": [
+            "401"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "4",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 20
+    },
+    {
+        "Subject": "Priciples of Communication Engineering",
+        "Type": "P",
+        "Professor": "Perisic Branko",
+        "Groups": [
+            "401",
+            "402"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "4",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 24
+    },
+    {
+        "Subject": "Natural Language Processing",
+        "Type": "P",
+        "Professor": "Muneendra Oja",
+        "Groups": [
+            "401",
+            "402"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 7
+    },
+    {
+        "Subject": "Natural Language Processing",
+        "Type": "V",
+        "Professor": "Satish Kumar",
+        "Groups": [
+            "401",
+            "402"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U1",
+        "Assignedtime": 48
+    },
+    {
+        "Subject": "Principles Of Economics",
+        "Type": "P",
+        "Professor": "Milinkovic Stevan",
+        "Groups": [
+            "401",
+            "402",
+            "405"
+        ],
+        "Classroom": [
+            "U1",
+            "U8"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U8",
+        "Assignedtime": 2
+    },
+    {
+        "Subject": "Principles Of Economics",
+        "Type": "V",
+        "Professor": "Vineet Tiwari",
+        "Groups": [
+            "402"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 20
+    },
+    {
+        "Subject": "Priciples of Communication Engineering",
+        "Type": "V",
+        "Professor": "Ramesh K Bhukya",
+        "Groups": [
+            "402"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "4",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 39
+    },
+    {
+        "Subject": "Principles Of Economics",
+        "Type": "V",
+        "Professor": "Vineet Tiwari",
+        "Groups": [
+            "405"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 54
+    },
+    {
+        "Subject": "Digitalna obrada signala",
+        "Type": "P",
+        "Professor": "Maity",
+        "Groups": [
+            "405"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U3",
+        "Assignedtime": 6
+    },
+    {
+        "Subject": "Digitalna obrada signala",
+        "Type": "V",
+        "Professor": "Nidhi Mishra",
+        "Groups": [
+            "405"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 18
+    },
+    {
+        "Subject": "Computer Security",
+        "Type": "P",
+        "Professor": "Venkat",
+        "Groups": [
+            "405"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U7",
+        "Assignedtime": 26
+    },
+    {
+        "Subject": "Computer Security",
+        "Type": "V",
+        "Professor": "Ranjit Singh",
+        "Groups": [
+            "405"
+        ],
+        "Classroom": [
+            "U3",
+            "U4",
+            "U5",
+            "U7"
+        ],
+        "Length": "3",
+        "AssignedClassromm": "U5",
+        "Assignedtime": 30
+    }
+]
