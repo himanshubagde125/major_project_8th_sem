@@ -45,13 +45,13 @@ def neighbour(chromosome):
         if classroom not in chromosome[0][i]['Classroom']:
             continue
         for k in range(len(chromosome[2][classroom])):
-            if chromosome[2][classroom][k] == 0 and k % 12 + length <= 12:
+            if chromosome[2][classroom][k] == 0 and k % 8 + length <= 8:
                 c += 1
                 # If we found x consecutive hours where x is length of our class
                 if c == length:
                     time = k + 1 - c
                     # Friday 8pm is reserved for free hour
-                    if k != 59:
+                    if k != 39:
                         pairs.append((time, classroom))
                         found = True
                     c = 0
@@ -63,10 +63,10 @@ def neighbour(chromosome):
         day = random.randrange(0, 5)
         # Friday 8pm is reserved for free hour
         if day == 4:
-            period = random.randrange(0, 12 - int(chromosome[0][i]['Length']))
+            period = random.randrange(0, 8 - int(chromosome[0][i]['Length']))
         else:
-            period = random.randrange(0, 13 - int(chromosome[0][i]['Length']))
-        time = 12 * day + period
+            period = random.randrange(0, 9 - int(chromosome[0][i]['Length']))
+        time = 8 * day + period
 
         chromosome[0][i]['AssignedClassromm'] = classroom
         chromosome[0][i]['Assignedtime'] = time
@@ -108,9 +108,9 @@ def neighbour2(chromosome):
 
         second = chromosome[0][second_index]
         if first['AssignedClassromm'] in second['Classroom'] and second['AssignedClassromm'] in first['Classroom']\
-                and first['Assignedtime'] % 12 + int(second['Length']) <= 12 \
-                and second['Assignedtime'] % 12 + int(first['Length']) <= 12:
-            if first['Assignedtime'] + int(second['Length']) != 60 and second['Assignedtime'] + int(first['Length']) != 60\
+                and first['Assignedtime'] % 8 + int(second['Length']) <= 8 \
+                and second['Assignedtime'] % 8 + int(first['Length']) <= 8:
+            if first['Assignedtime'] + int(second['Length']) != 40 and second['Assignedtime'] + int(first['Length']) != 40\
                     and first != second:
                 satisfied = True
         c += 1

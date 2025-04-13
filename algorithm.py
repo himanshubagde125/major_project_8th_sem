@@ -110,8 +110,8 @@ def evolutionary_algorithm():
             last_seen = 0
             found = False
             current_load = 0
-            for hour in range(12):
-                time = day * 12 + hour
+            for hour in range(8):
+                time = day * 8 + hour
                 if chromosome[3][group][time] >= 1:
                     current_load += 1
                     if not found:
@@ -142,10 +142,10 @@ def evolutionary_algorithm():
             last_seen = 0
             found = False
             current_load = 0
-            for hour in range(12):
-                time = day * 12 + hour
+            for hour in range(8):
+                time = day * 8 + hour
                 if chromosome[1][prof][time] >= 1:
-                    if time == 59:
+                    if time == 39:
                         free_hour = False
                     current_load += 1
                     if not found:
@@ -163,6 +163,6 @@ def evolutionary_algorithm():
     print('Max prof cost is:', max_prof_cost)
     print('Average prof cost is:', total_prof_cost / len(chromosome[1]))
     print('Total prof load is:', total_prof_load)
-    print('Free hour:', free_hour, ', 59')
+    print('Free hour:', free_hour, ', 39')
 
 evolutionary_algorithm()

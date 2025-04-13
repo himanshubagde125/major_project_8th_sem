@@ -5,11 +5,11 @@ def load_data(path):
     with open(path, 'r') as read_file:
         data = json.load(read_file)
 
-    for university_class in data['Casovi']:
+    for university_class in data['Subject Details']:
         classroom = university_class['Classroom']
-        university_class['Classroom'] = data['Ucionice'][classroom]
+        university_class['Classroom'] = data['Classrooms'][classroom]
 
-    data = data['Casovi']
+    data = data['Subject Details']
 
     return data
 
@@ -22,11 +22,11 @@ def generate_chromosome(data):
     new_data = []
 
     for single_class in data:
-        professors[single_class['Professor']] = [0] * 60
+        professors[single_class['Professor']] = [0] * 40
         for classroom in single_class['Classroom']:
-            classrooms[classroom] = [0] * 60
+            classrooms[classroom] = [0] * 40
         for group in single_class['Groups']:
-            groups[group] = [0] * 60
+            groups[group] = [0] * 40
         subjects[single_class['Subject']] = {'P' : [], 'V' : [], 'L' : []}
 
     for single_class in data:
@@ -35,11 +35,11 @@ def generate_chromosome(data):
         classroom = random.choice(single_class['Classroom'])
         day = random.randrange(0, 5)
         if day == 4:
-            period = random.randrange(0, 12 - int(single_class['Length']))
+            period = random.randrange(0, 8 - int(single_class['Length']))
         else:
-            period = random.randrange(0, 13 - int(single_class['Length']))
+            period = random.randrange(0, 9 - int(single_class['Length']))
         new_single_class['AssignedClassromm'] = classroom
-        time = 12 * day + period
+        time = 8 * day + period
         new_single_class['Assignedtime'] = time
 
         for i in range(time, time + int(single_class['Length'])):

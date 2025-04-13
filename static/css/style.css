@@ -1,0 +1,85 @@
+/* Additional styling for the timetable */
+
+/* Multi-hour class styles */
+.class-span-2 {
+    width: 210% !important;
+    position: absolute !important;
+    z-index: 10 !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.class-span-3 {
+    width: 310% !important;
+    position: absolute !important;
+    z-index: 10 !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+/* Make sure the cells can handle absolute positioning */
+.timetable td {
+    position: relative !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    vertical-align: top !important;
+}
+
+/* Empty cells that are spanned into */
+td.spans-into {
+    border-left: none !important;
+    background-color: transparent !important;
+    opacity: 0;
+}
+
+/* Styling for cells with multiple classes */
+.multiple-classes {
+    padding: 0;
+}
+
+.multiple-classes .class-cell {
+    margin-bottom: 3px;
+    border-bottom: 1px dashed #dee2e6;
+}
+
+.multiple-classes .class-cell:last-child {
+    border-bottom: none;
+}
+
+/* Adjust padding and margins for better display */
+.class-cell {
+    padding: 8px;
+    margin: 0;
+    height: auto;
+    min-height: 100px;
+}
+
+.subject-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.professor-name, .classroom-name, .class-type {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+}
+
+/* Add more vertical space */
+.timetable tr {
+    height: auto;
+}
+
+.timetable td {
+    min-height: 100px;
+}
+
+/* Custom background colors for multiple entries */
+.multiple-classes .type-P {
+    background-color: rgba(40, 167, 69, 0.85);
+}
+
+.multiple-classes .type-V {
+    background-color: rgba(0, 123, 255, 0.85);
+}
+
+.multiple-classes .type-L {
+    background-color: rgba(111, 66, 193, 0.85);
+} 

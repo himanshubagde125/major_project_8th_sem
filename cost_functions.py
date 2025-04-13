@@ -63,8 +63,8 @@ def cost2(chromosome):
             last_seen = 0
             found = False
             current_load = 0
-            for hour in range(12):
-                time = day * 12 + hour
+            for hour in range(8):
+                time = day * 8 + hour
                 if chromosome[3][group][time] >= 1:
                     current_load += 1
                     if not found:
@@ -81,8 +81,8 @@ def cost2(chromosome):
             last_seen = 0
             found = False
             current_load = 0
-            for hour in range(12):
-                time = day * 12 + hour
+            for hour in range(8):
+                time = day * 8 + hour
                 if chromosome[1][prof][time] >= 1:
                     current_load += 1
                     if not found:

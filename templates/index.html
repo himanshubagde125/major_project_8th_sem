@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Visualization</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .timetable-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        .filter-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #343a40;
+        }
+        .timetable-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .badge {
+            font-size: 0.8em;
+        }
+        
+        /* Timetable specific styles */
+        .timetable {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        
+        .timetable th {
+            background-color: #f8f9fa;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border: 1px solid #dee2e6;
+        }
+        
+        .timetable td {
+            padding: 0;
+            border: 1px solid #dee2e6;
+            vertical-align: top;
+            width: 12.5%;
+            height: 70px;
+            min-width: 110px;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .timetable .day-slot {
+            width: 8%;
+            font-weight: bold;
+            background-color: #f8f9fa;
+            padding: 8px;
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 5;
+        }
+        
+        .class-cell {
+            height: 100%;
+            background-color: #e3f2fd;
+            border-left: 3px solid #007bff;
+            padding: 4px;
+            font-size: 0.75rem;
+            box-sizing: border-box;
+            position: relative;
+            margin-bottom: 2px;
+        }
+        
+        .multiple-classes .class-cell {
+            height: auto;
+            margin-bottom: 2px;
+        }
+        
+        .subject-name {
+            font-weight: bold;
+            color: #0d6efd;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .professor-name, .classroom-name, .class-type {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.7rem;
+            margin-bottom: 1px;
+        }
+        
+        .lunch-break {
+            background-color: #f8d7da;
+            text-align: center;
+            padding: 5px;
+            font-style: italic;
+            height: 100%;
+        }
+        
+        .no-class {
+            background-color: #f8f9fa;
+            height: 100%;
+        }
+        
+        /* Type colors */
+        .type-P {
+            border-left-color: #198754;
+            background-color: #d1e7dd;
+        }
+        
+        .type-V {
+            border-left-color: #0d6efd;
+            background-color: #e3f2fd;
+        }
+        
+        .type-L {
+            border-left-color: #6f42c1;
+            background-color: #e2d9f3;
+        }
+        
+        /* Classes that span multiple cells */
+        .class-span-2 {
+            width: calc(200% + 1px);
+            position: absolute;
+            z-index: 1;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        .class-span-3 {
+            width: calc(300% + 2px);
+            position: absolute;
+            z-index: 1;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        /* Make cells with spanning classes empty */
+        td.spans-into {
+            background-color: transparent !important;
+            border-left: none;
+            border-right: none;
+        }
+        
+        /* Highlight multi-hour classes */
+        .class-cell.class-span-2:after,
+        .class-cell.class-span-3:after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 8px 8px;
+            border-color: transparent transparent rgba(0,0,0,0.2) transparent;
+        }
+        
+        /* Legend */
+        .type-legend {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+        
+        .legend-p {
+            background-color: #d1e7dd;
+            border-left: 3px solid #198754;
+        }
+        
+        .legend-v {
+            background-color: #e3f2fd;
+            border-left: 3px solid #0d6efd;
+        }
+        
+        .legend-l {
+            background-color: #e2d9f3;
+            border-left: 3px solid #6f42c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">University Timetable Visualization</h1>
+        
+        <div class="filter-container">
+            <h4>Filter Options</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filterOption" id="noFilter" value="none" checked>
+                        <label class="form-check-label" for="noFilter">
+                            No Filter (Show All)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filterOption" id="professorFilter" value="professor">
+                        <label class="form-check-label" for="professorFilter">
+                            Filter by Professor
+                        </label>
+                    </div>
+                    <select class="form-select mt-2" id="professorSelect" disabled>
+                        <option value="">Select Professor</option>
+                        {% for professor in professors %}
+                        <option value="{{ professor }}">{{ professor }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filterOption" id="classroomFilter" value="classroom">
+                        <label class="form-check-label" for="classroomFilter">
+                            Filter by Classroom
+                        </label>
+                    </div>
+                    <select class="form-select mt-2" id="classroomSelect" disabled>
+                        <option value="">Select Classroom</option>
+                        {% for classroom in classrooms %}
+                        <option value="{{ classroom }}">{{ classroom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" id="applyFilterBtn">Apply Filter</button>
+            </div>
+        </div>
+        
+        <div class="timetable-container">
+            <div class="timetable-heading">
+                <h3 id="timetableTitle">Full Timetable</h3>
+                <span id="classCount" class="badge bg-secondary"></span>
+            </div>
+            
+            <div class="type-legend">
+                <div class="legend-item">
+                    <div class="legend-color legend-p"></div>
+                    <span>Practical (P)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-v"></div>
+                    <span>Lecture (V)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-l"></div>
+                    <span>Lab (L)</span>
+                </div>
+            </div>
+            
+            <div id="timetableData">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Day/Time</th>
+                            <th>9:00-11:00 AM</th>
+                            <th>11:00-1:00 PM</th>
+                            <th>Lunch Break (1-3 PM)</th>
+                            <th>3:00-5:00 PM</th>
+                            <th>5:00-7:00 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timetableBody">
+                        <!-- Timetable content will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter option change handling
+            const filterRadios = document.querySelectorAll('input[name="filterOption"]');
+            const professorSelect = document.getElementById('professorSelect');
+            const classroomSelect = document.getElementById('classroomSelect');
+            
+            filterRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    professorSelect.disabled = this.value !== 'professor';
+                    classroomSelect.disabled = this.value !== 'classroom';
+                });
+            });
+            
+            // Apply filter button click
+            document.getElementById('applyFilterBtn').addEventListener('click', function() {
+                const selectedFilterType = document.querySelector('input[name="filterOption"]:checked').value;
+                let filterValue = '';
+                
+                if (selectedFilterType === 'professor') {
+                    filterValue = professorSelect.value;
+                    if (!filterValue) {
+                        alert('Please select a professor');
+                        return;
+                    }
+                } else if (selectedFilterType === 'classroom') {
+                    filterValue = classroomSelect.value;
+                    if (!filterValue) {
+                        alert('Please select a classroom');
+                        return;
+                    }
+                }
+                
+                loadTimetable(selectedFilterType, filterValue);
+            });
+            
+            // Initial load
+            loadTimetable('none', '');
+        });
+        
+        function loadTimetable(filterType, filterValue) {
+            const timetableTitle = document.getElementById('timetableTitle');
+            const timetableBody = document.getElementById('timetableBody');
+            const classCount = document.getElementById('classCount');
+            
+            // Update title based on filter
+            if (filterType === 'professor') {
+                timetableTitle.textContent = `Timetable for Professor: ${filterValue}`;
+            } else if (filterType === 'classroom') {
+                timetableTitle.textContent = `Timetable for Classroom: ${filterValue}`;
+            } else {
+                timetableTitle.textContent = 'Full Timetable';
+            }
+            
+            // Show loading
+            timetableBody.innerHTML = '<tr><td colspan="9" class="text-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></td></tr>';
+            
+            // Fetch timetable data
+            fetch(`/timetable?filter_type=${filterType}&filter_value=${filterValue}`)
+                .then(response => response.json())
+                .then(data => {
+                    classCount.textContent = `${data.length} classes`;
+                    
+                    if (data.length === 0) {
+                        timetableBody.innerHTML = '<tr><td colspan="9" class="text-center p-3"><div class="alert alert-info m-0">No classes found for the selected filter.</div></td></tr>';
+                        return;
+                    }
+                    
+                    // Create timetable grid
+                    createTimetableGrid(data, timetableBody);
+                })
+                .catch(error => {
+                    console.error('Error loading timetable:', error);
+                    timetableBody.innerHTML = '<tr><td colspan="9" class="text-center p-3"><div class="alert alert-danger m-0">Error loading timetable data.</div></td></tr>';
+                });
+        }
+        
+        function createTimetableGrid(data, timetableBody) {
+            // Define days
+            const days = [
+                { display: 'Monday', value: 0 },
+                { display: 'Tuesday', value: 1 },
+                { display: 'Wednesday', value: 2 },
+                { display: 'Thursday', value: 3 },
+                { display: 'Friday', value: 4 }
+            ];
+            
+            // Process data for grid
+            // Group by day
+            const classesByDay = {};
+            days.forEach(day => {
+                classesByDay[day.value] = [];
+            });
+            
+            console.log(`Processing ${data.length} entries`);
+            
+            // Add classes to day
+            data.forEach((entry, index) => {
+                const timeIndex = parseInt(entry.time_index);
+                
+                // Map timeIndex to day and slot
+                // 0 = Monday 9-11 AM, 2 = Monday 11-1 PM
+                // 4 = Monday 3-5 PM, 6 = Monday 5-7 PM
+                // 8 = Tuesday 9-11 AM, and so on
+                const dayIndex = Math.floor(timeIndex / 8);
+                const slotIndex = timeIndex % 8;
+                
+                // Map slot index to column in our table
+                // Column 0: 9-11 AM (slot 0)
+                // Column 1: 11-1 PM (slot 2)
+                // Column 2: Lunch break
+                // Column 3: 3-5 PM (slot 4)
+                // Column 4: 5-7 PM (slot 6)
+                let column;
+                if (slotIndex === 0) {
+                    column = 0; // 9-11 AM
+                } else if (slotIndex === 2) {
+                    column = 1; // 11-1 PM
+                } else if (slotIndex === 4) {
+                    column = 3; // 3-5 PM (after lunch break)
+                } else if (slotIndex === 6) {
+                    column = 4; // 5-7 PM
+                } else {
+                    console.log(`Unexpected slot index: ${slotIndex} for entry: ${entry.subject}`);
+                    return; // Skip this entry
+                }
+                
+                // Handle day index for classes beyond Friday
+                const normalizedDayIndex = dayIndex % 5;
+                
+                console.log(`Entry ${index+1}: ${entry.subject} (${entry.type}) - Day: ${normalizedDayIndex}, TimeIndex: ${timeIndex}, Slot: ${slotIndex}, Column: ${column}, UniqueID: ${entry.unique_id}`);
+                
+                // Push the class to the day's array
+                classesByDay[normalizedDayIndex].push({
+                    ...entry,
+                    column: column,
+                    slotIndex: slotIndex,
+                    displayOrder: index // Use the original order from the API to ensure all entries are shown
+                });
+            });
+            
+            // Sort classes by time for each day
+            Object.keys(classesByDay).forEach(day => {
+                // First sort by column, then by type (P, V, L) to ensure consistent order
+                classesByDay[day].sort((a, b) => {
+                    if (a.column !== b.column) {
+                        return a.column - b.column;
+                    }
+                    // If entries have the same column, sort by type
+                    // Order: P (practical), V (lecture), L (lab)
+                    const typeOrder = { 'P': 0, 'V': 1, 'L': 2 };
+                    return typeOrder[a.type] - typeOrder[b.type];
+                });
+            });
+            
+            // Generate table rows
+            let html = '';
+            
+            days.forEach(day => {
+                html += '<tr>';
+                html += `<td class="day-slot">${day.display}</td>`;
+                
+                // Get classes for this day
+                const dayClasses = classesByDay[day.value];
+                
+                // For columns 0-4 (0=9-11am, 1=11-1pm, 2=lunch, 3=3-5pm, 4=5-7pm)
+                for (let col = 0; col < 5; col++) {
+                    // Check if we need to insert lunch break
+                    if (col === 2) {
+                        html += '<td class="lunch-break">Lunch Break (1-3 PM)</td>';
+                        continue;
+                    }
+                    
+                    // Find classes that start at this column
+                    const classesForColumn = dayClasses.filter(c => c.column === col);
+                    
+                    if (classesForColumn.length > 0) {
+                        html += `<td class="${classesForColumn.length > 1 ? 'multiple-classes' : 'has-class'}">`;
+                        
+                        // Render all classes in this column
+                        classesForColumn.forEach(classItem => {
+                            const typeClass = `type-${classItem.type}`;
+                            html += `
+                                <div class="class-cell ${typeClass}">
+                                    <div class="subject-name">${classItem.subject}</div>
+                                    <div class="professor-name">Prof: ${classItem.professor}</div>
+                                    <div class="classroom-name">Room: ${classItem.classroom}</div>
+                                    <div class="class-type">${classItem.type_display} (2hr)</div>
+                                </div>
+                            `;
+                        });
+                        
+                        html += '</td>';
+                    } else {
+                        // Empty cell
+                        html += '<td><div class="no-class"></div></td>';
+                    }
+                }
+                
+                html += '</tr>';
+            });
+            
+            timetableBody.innerHTML = html;
+        }
+    </script>
+</body>
+</html> 
